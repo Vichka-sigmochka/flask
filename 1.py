@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, url_for
 
 app = Flask(__name__)
 
@@ -22,16 +22,17 @@ def index1():
 
 @app.route('/image_mars')
 def return_sample_page():
-    return """<!doctype html>
+    return f"""<!doctype html>
                 <html lang="en">
                   <head>
                     <meta charset="utf-8">
                     <title>Привет, арс!</title>
                   </head>
                   <body>
+                  <h1>Жди нас Марс!</h1>
                   <img src="{url_for('static', filename='img/img.png')}" 
            alt="здесь должна была быть картинка, но не нашлась">
-                    <h1>Вот она какая, красная планета.</h1>
+                    <p>Вот она какая, красная планета.</p>
                   </body>
                 </html>"""
 
