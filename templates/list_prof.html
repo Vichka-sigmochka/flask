@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Список профессий</h1>
+    {% set user_list = ['Инженер', 'Пилот', 'Врач', 'Строитель'] %}
+    {% if param == 'ul' %}
+        <ul>
+            {% for user in user_list %}
+            <li>{{ user }} </li>
+            {% endfor %}
+        </ul>
+    {% elif param == 'ol' %}
+        <ol>
+            {% for user in user_list %}
+            <li>{{ user }} </li>
+            {% endfor %}
+        </ol>
+    {% else %}
+    <h4> Неверный параметр </h4>
+{% endif %}
+{% endblock %}
